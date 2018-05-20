@@ -241,19 +241,13 @@ public class TicTacToe {
                 //compare and sets the maximum to a larger value
                 maximum = max(currentScore, maximum)
  
-                if currentScore >= 0 { 
-                	if(nth == 0) {
-                		computerNextPos = availablePositions[index]
-                	}
+ 
+                if((nth == 0 && currentScore >= 0) || (nth == 0 && index == availablePositions.count-1 && maximum < 0)){ 
+                	computerNextPos = availablePositions[index]
                 }
                 if currentScore == 1 {
                 	board[x][y] = 0 
                 	break
-                }
-                if index == availablePositions.count-1 && maximum < 0 {
-                	if(nth == 0) {
-                		computerNextPos = availablePositions[index]
-            		}
             	}
             //----------------
             } else if  !computerTurn  {
